@@ -39,6 +39,11 @@ const database_of_questions = [
     question: 'Who is the current CEO of Microsoft?',
     options: ['Steve Jobs', 'Bill Gates', 'Satya Nadella', 'Tim Cook'],
     answer: 'Satya Nadella'
+  },
+  {
+    question: 'Who was the first man to land on moon?',
+    options: ['Narendra Modi', 'Baba Bhageshwar', 'Neil Armstrong', 'Putin'],
+    answer: 'Neil Armstrong'
   }
 ];
 

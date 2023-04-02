@@ -30,6 +30,17 @@ fetch('http://localhost:3000/questions')
   })
   .catch((error) => {
     console.error(error);
+    const question=document.getElementById("question-box");
+      const option1 = document.getElementById('option-1');
+      const option2 = document.getElementById('option-2');
+      const option3 = document.getElementById('option-3');
+      const option4 = document.getElementById('option-4');
+      question.innerText="Server is under Maintenance. Try Reloading or Come back soon! ";
+      option1.innerText="Extremely Sorry for the issue!";
+      option2.innerText="Extremely Sorry for the issue!";
+      option3.innerText="Extremely Sorry for the issue!";
+      option4.innerText="Extremely Sorry for the issue!";
+      return;
   });
 
 
