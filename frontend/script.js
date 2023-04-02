@@ -14,6 +14,7 @@ fetch('http://localhost:3000/questions')
       option2.innerText="Thank You For Playing!";
       option3.innerText="Thank You For Playing!";
       option4.innerText="Thank You For Playing!";
+      submitButton.style.visibility="hidden";
       return;
     }
     currentQuestion=data;
@@ -40,6 +41,7 @@ fetch('http://localhost:3000/questions')
       option2.innerText="Extremely Sorry for the issue!";
       option3.innerText="Extremely Sorry for the issue!";
       option4.innerText="Extremely Sorry for the issue!";
+      submitButton.style.visibility="hidden";
       return;
   });
 
