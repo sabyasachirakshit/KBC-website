@@ -8,7 +8,7 @@ app.use(cors());
 
 function getRandomUniqueQuestion() {
   if(showed_questions.length===database_of_questions.length){
-    const error={"err_aqf":"all questions finised"};
+    const error={"err_aqf":"All questions are showed. Server updates coming soon.."};
     return error;
   }
   const randomIndex = Math.floor(Math.random() * database_of_questions.length);

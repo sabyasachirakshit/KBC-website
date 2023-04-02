@@ -3,7 +3,18 @@ fetch('http://localhost:3000/questions')
   .then((response) => response.json())
   .then((data) => {
     if(data.err_aqf){
-      console.log("all Questions finished!");
+      console.log(data);
+      const question=document.getElementById("question-box");
+      const option1 = document.getElementById('option-1');
+      const option2 = document.getElementById('option-2');
+      const option3 = document.getElementById('option-3');
+      const option4 = document.getElementById('option-4');
+      question.innerText=data.err_aqf;
+      option1.innerText="Thank You For Playing!";
+      option2.innerText="Thank You For Playing!";
+      option3.innerText="Thank You For Playing!";
+      option4.innerText="Thank You For Playing!";
+      return;
     }
     currentQuestion=data;
     const question=document.getElementById("question-box");
@@ -22,19 +33,13 @@ fetch('http://localhost:3000/questions')
   });
 
 
-// Get all option elements
 const options = document.querySelectorAll('.option');
-
-// Add event listener to each option
 options.forEach((option) => {
   option.addEventListener('click', () => {
-    // Uncheck all options and set their background color to black
     options.forEach((o) => {
       o.checked = false;
       o.style.backgroundColor = 'black';
     });
-
-    // Check the clicked option and set its background color to orangered
     option.checked = true;
     option.style.backgroundColor = 'orangered';
   });
@@ -71,8 +76,6 @@ function checkOptionSelected() {
     option1.checked=false;
   })
   if (option1.checked || option2.checked || option3.checked || option4.checked) {
-    // At least one option is selected, allow the answer to be submitted
-    // Your submit answer code goes here
     if(option1.checked){
       if(option1.value===currentQuestion.answer){
         option1.style.backgroundColor="lightgreen";
@@ -132,7 +135,6 @@ function checkOptionSelected() {
     }   
     nextButton.style.visibility = 'visible';
   } else {
-    // No option is selected, display popup message
     alert('Please select an option');
   }
 }
@@ -140,3 +142,8 @@ function checkOptionSelected() {
 
 const submitButton = document.querySelector('.btn-outline-success');
 submitButton.addEventListener('click', checkOptionSelected);
+
+const nextButton=document.getElementById("next");
+nextButton.addEventListener("click",()=>{
+  window.location.reload();
+})
