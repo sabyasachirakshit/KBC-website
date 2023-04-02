@@ -2,8 +2,9 @@ let currentQuestion;
 fetch('http://localhost:3000/questions')
   .then((response) => response.json())
   .then((data) => {
-    // Do something with the data
-    console.log(data);
+    if(data.err_aqf){
+      console.log("all Questions finished!");
+    }
     currentQuestion=data;
     const question=document.getElementById("question-box");
     const option1 = document.getElementById('option-1');
