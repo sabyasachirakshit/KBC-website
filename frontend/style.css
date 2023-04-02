@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.option:hover{
+    background-color: aqua !important;
+}
+
+.option:checked{
+    background-color: orangered !important;
+}
+
+.option{
+    border-radius: 4px;
+    height:6vh;
+}
