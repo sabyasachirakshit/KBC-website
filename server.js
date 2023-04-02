@@ -8,26 +8,13 @@ app.use(cors());
 
 // Define your routes
 app.get('/questions', (req, res) => {
-  const questions = [
+  const question = 
     {
       question: 'What is the capital of France?',
       options: ['Paris', 'London', 'Berlin', 'Madrid'],
       answer: 'Paris'
-    },
-    {
-      question: 'What is the largest planet in our solar system?',
-      options: ['Jupiter', 'Saturn', 'Neptune', 'Mars'],
-      answer: 'Jupiter'
-    },
-    {
-      question: 'Who is the current CEO of Microsoft?',
-      options: ['Steve Jobs', 'Bill Gates', 'Satya Nadella', 'Tim Cook'],
-      answer: 'Satya Nadella'
-    }
-    // Add more questions here
-  ];
-
-  res.json(questions);
+    };
+  res.json(question);
 });
 
 // Start the server
